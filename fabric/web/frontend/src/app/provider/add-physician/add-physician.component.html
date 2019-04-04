@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="card" style="width: 18rem;margin-top: 20px">
+      <div class="card-body">
+          <div class="content">Register</div>
+          <form>
+              <div class="form-group" style="margin-top: 10px">
+                  <input type="firstName" class="form-control" id="firstNameid" #firstName aria-describedby="ssnHelp" placeholder="Enter First Name">
+                  <input type="lastName" style="margin-top: 5px;" class="form-control" id="lastName" #lastName aria-describedby="ssnHelp" placeholder="Enter Last Name">
+                  <input type="email" style="margin-top: 5px;"  class="form-control" id="emailid" #email aria-describedby="emailHelp" placeholder="Enter Email">
+                  <input type="password" style="margin-top: 5px;"  class="form-control" id="passwordid" #password aria-describedby="patientUIDHelp" placeholder="Enter Password">
+                  <small id="emailHelp" class="form-text text-muted">Required field.</small>
+              </div>
+          </form>
+          <input type="submit"  (click)="addPhysician(email.value,password.value,firstName.value,lastName.value)" class="btn btn-primary btn-block" value="Add Physician">
+      </div>
+  </div>
+</div>

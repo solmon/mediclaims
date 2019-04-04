@@ -1,0 +1,33 @@
+<div class="row" *ngFor="let benefits of benefitList" >
+                    <div style="width: 100%;" class="fluid-container margin-35">
+                      <div class="row" >
+                        
+                        <ng-container >
+                            <div class="col-md-12 plan-name">{{benefits.benefitTitle}}</div>
+                            <div class="col-md-12 col-xs-12 data-list-box">
+                                <div class="data-box data-list">
+                                    <ul class="list-group">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Payer Title
+                                            <span>{{benefits.payerTitle}}</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Type Of Benefit
+                                            <span>{{benefits.typeOfBenefit}}</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Coverage Amount
+                                            <span>{{benefits.coverageAmount}}</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Monthly Premium
+                                            <span>{{benefits.monthlyPremium}}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+              </div>

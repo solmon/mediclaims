@@ -1,0 +1,36 @@
+.vertical-div {
+    padding: 0rem;
+}
+.footer {
+    /* position: absolute;
+  bottom: 0; */
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px;
+    /* Vertically center the text there */
+    background-color: #707070;
+    color: #FFFFFF;
+    text-align: middle;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.footer > p {
+    margin-bottom: 0 !important;
+}
+
+.main-container {
+    max-width: 100%;
+    min-height: 100%;
+    /* margin-bottom: 47px; */
+}
+
+.hospital_logo {
+    height: 37px;
+    width: 196px;
+}
+

@@ -1,0 +1,49 @@
+<div class="top-section">
+    <span class="back-arrow" (click)="goback()">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp; &nbsp;
+         back </span>
+</div>
+<div class="fluid-container margin-35">
+    <div class="row align-items-center">
+        <div class="col-md-12 padding-0 description">
+            At Zigma, you’ll find the best Medicare plans for your budget and health care needs. You can pick from Medicare Supplement plans, Prescription Drug Coverage, and Medicare Advantage plans
+        </div>
+        <div class="col-md-12 padding-0 search">
+            <p>Search your plans to link</p>
+        </div>
+        <form class="row width-100" [formGroup]="searchForm" (ngSubmit)="searchPlan()">
+            <!-- <div class="col-md-3 col-xs-12 search-box">
+                <mat-form-field>
+                    <input matInput placeholder="Social Security Number" formControlName="ssn" name="ssn" required>
+                </mat-form-field>
+            </div> -->
+            <div class="col-md-12  col-xs-12 search-box">
+                <mat-form-field>
+                    <input matInput placeholder="Employee ID" formControlName="empid" name="empid" required>
+                </mat-form-field>
+            </div>
+            <!-- <div class="col-md-3  col-xs-12 search-box">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="dob" name="dob" required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div> -->
+            <div class="col-md-12  col-xs-12 search-box">
+                <button type="submit" class="btn custom-btn">Search</button>
+            </div>
+        </form>
+    </div>
+    <!-- <ng-container>
+        <div class="row">
+            <div class="col-12">
+                <section class="example-section">
+                    <mat-spinner></mat-spinner>
+                </section>
+            </div>
+        </div>
+    </ng-container> -->
+</div>
+<ng-container *ngIf="!isLoading && issearchdata">
+    <app-plan-list [searchData]="planList$ | async"></app-plan-list>
+</ng-container>

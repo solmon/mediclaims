@@ -1,0 +1,118 @@
+.data-list-box {
+    min-height: 200px;
+    display: table;
+}
+
+.data-box {
+    min-height: 170px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(86, 61, 124, .2);
+    font-family: Open Sans, Regular;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+    /* padding-left: 21px;
+    padding-top: 25px; */
+}
+
+.data-list {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.list-group-item {
+    border: 0px !important;
+}
+
+.badge {
+    font-size: 16px !important;
+    font-weight: normal !important;
+}
+
+.search p {
+    font-family: Open Sans, Semibold;
+    font-size: 19px;
+    color: rgba(67, 67, 67, 1);
+}
+
+.custom-btn {
+    background-color: rgba(25, 126, 198, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Open Sans, Regular;
+    font-size: 16px;
+    height: 38px;
+    width: 110px;
+}
+
+.plan-name {
+    min-height: 49px;
+    background-color: rgba(25, 126, 198, 1);
+    font-family: Open Sans, Semibold;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    padding: 10px;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.margin-35 {
+    margin: 35px;
+}
+
+.padding-0 {
+    padding-left: 0px !important;
+}
+
+.row>.data-list-box {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    background-color: rgba(235, 235, 235, 1);
+}
+
+.premium-amount {
+    font-family: Open Sans, Bold;
+    font-size: 26px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 600;
+}
+
+.dialog-title {
+    height: 44px;
+    background-color: rgba(25, 126, 198, 1);
+    text-align: center;
+    padding-top: 9px;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.dialog-content {
+    padding: 34px;
+    text-align: center;
+    color: rgba(25, 126, 198, 1);
+}
+
+.dialog-content:hover {
+    cursor: pointer;
+}
+
+.dialog-content p:nth-child(1) {
+    font-family: Open Sans, Regular;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.dialog-content p:nth-child(2) {
+    font-family: Open Sans, Regular;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .list-group-item {
+        padding: 0.75rem 0.65rem !important;
+    }
+}

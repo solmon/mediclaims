@@ -1,0 +1,95 @@
+.top-section {
+    width: 100%;
+    min-height: 400px;
+    background: url('../../../assets/Relax-Mood-Family-on-Beach.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* padding: 25px; */
+    background-size: cover;
+    border-bottom: rgba(25, 126, 198, 1) 4px solid;
+}
+
+.welcome-content {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.welcome-head {
+    font-family: Open Sans, Semibold;
+    font-size: 30px;
+    color: rgba(25, 126, 198, 1);
+    padding-top: 30px;
+}
+
+.welcome-desc {
+    font-family: Open Sans, Regular;
+    font-size: 18px;
+    color: rgba(106, 106, 106, 1);
+    margin-bottom: 30px;
+}
+
+.row {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}
+
+.error-title {
+    height: 44px;
+    background-color: #ac3434;
+    text-align: center;
+    padding-top: 5px;
+    color: #FFFFFF;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+}
+.error-content {
+    padding: 34px;
+    text-align: center;
+    color: #ac3434;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    font-weight: 600;
+}
+/* .custom-btn {
+    background-color: rgba(25, 126, 198, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Open Sans, Regular;
+    font-size: 18px;
+} */
+
+.insurance-section {
+    height: 201px;
+    width: 247px;
+    background-color: rgba(235, 235, 235, 1);
+    float: right;
+    margin-top: 35px;
+}
+
+.insurance {
+    height: 52px;
+    width: 147px;
+    font-family: Open Sans, Semibold;
+    font-size: 16px;
+    color: rgba(25, 126, 198, 1);
+    text-align: center;
+    margin: 19px 46px;
+}
+
+.insurance-id {
+    background-color: rgba(255, 255, 255, 1);
+    height: 80px;
+    width: 195px;
+    text-align: center;
+    font-family: Open Sans, Bold;
+    font-size: 18px;
+    color: rgba(21, 90, 139, 1);
+    padding-top: 27px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+@media screen and (max-width: 600px) {
+    .insurance-section {
+        float: left;
+    }
+}

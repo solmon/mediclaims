@@ -1,0 +1,183 @@
+<div class="top-section">
+    <span class="back-arrow" routerLink="/customer/dashboard">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>&nbsp; &nbsp; Back</span>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="margin-top active-plan" style="margin-left: 10px">Enrollment ID: {{enrollmentDetails.enrollId}}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 content-section">
+            <div class="row">
+                <div class="col-md-8 col-xs-12 plan_name">Plan Name: {{planDetails.benefitTitle}}</div>
+                <div class="col-md-4 col-xs-12 plan_id">Plan Category:
+                    <span>{{planDetails.typeOfBenefit}}</span>
+                </div>
+            </div>
+            <div class="content-sub-section">Plan Provider: {{planDetails.payerTitle}}</div>
+            <div class="row">
+                <div class="col-md-4 col-xs-12  data-list-box">
+                    <div class="data-box data-list">
+                        <p>Total</p>
+                        <p>{{enrollmentDetails.coverageAmount}}$</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12  data-list-box">
+                    <div class="data-box data-list">
+                        <p>Claimed</p>
+                        <p>{{enrollmentDetails.claimedAmount}}$</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12  data-list-box">
+                    <div class="data-box data-list">
+                        <p>Remaining</p>
+                        <p>{{enrollmentDetails.remainingCoverageAmount}}$</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-xs-12 spending">
+                    <p class="text-center">Your Spending</p>
+                    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"></canvas>
+                </div>
+                <div class="col-md-6 col-xs-12 hospital">
+                    <p class="text-center">Hospital Expenditure</p>
+                    <canvas baseChart [data]="doughnutChartData1" [labels]="doughnutChartLabels1" [chartType]="doughnutChartType"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 claim-section">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <h5 class="margin-20">{{claimHeading}}</h5>
+                    <div class="margin-20">
+                        <!-- For new plans -->
+                        <div class="card" *ngFor="let plan of plansList;let i = index">
+                            <div *ngIf="plan.status === 'N'">
+                                <span class="badge waiting_claim">Pending Procedures</span>
+                            </div>
+                            <div *ngIf="plan.status === 'J'">
+                                <span class="badge rejected_claim">Rejected</span>
+                            </div>
+                            <div *ngIf="plan.status === 'A'">
+                                <span class="badge approved_claim">Approved</span>
+                            </div>
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Patient Uid</th>
+                                        <th>Employee ID</th>
+                                        <th>Physician Name</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                        <th>Comments</th>
+                                        <th>Claim Total</th>
+                                        <th>Insurance Total</th>
+                                        <th>Patient Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{plan.patientUid}}</td>
+                                        <td>{{plan.employeeId}}</td>
+                                        <td>{{plan.physicianName}}</td>
+                                        <td>{{plan.treatmentDescription}}</td>
+                                        <td>{{plan.date}}</td>
+                                        <td>{{plan.comments}}</td>
+                                        <td>${{plan.claimTotal}}</td>
+                                        <td>${{plan.insuranceTotal}}</td>
+                                        <td>${{plan.patientTotal}}</td>
+                                        <td>
+                                            <input type="submit" value="Details" class="btn get_details" (click)="getDetails(i)">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table-responsive" *ngIf="showDetailsof[i]">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr style="background: #3079B0">
+                                            <th class="text-white">Procedure Title</th>
+                                            <th class="text-white">Date From</th>
+                                            <th class="text-white">Date To</th>
+                                            <th class="text-white">Provider UID</th>
+                                            <th class="text-white">Insurance Coverage</th>
+                                            <th class="text-white">Insurance Percentage</th>
+                                            <th class="text-white">Payer Percentage</th>
+                                            <th class="text-white">Fee Total</th>
+                                            <th class="text-white">Status</th>
+                                            <th class="text-white">Network</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let procedure of plan.procedures">
+                                            <td>{{procedure.procedureTitle}}</td>
+                                            <td>{{procedure.dateFrom}}</td>
+                                            <td>{{procedure.dateTo}}</td>
+                                            <td>{{procedure.providerUid}}</td>
+                                            <td>{{procedure.insuranceCoverage}}$</td>
+                                            <td>{{procedure.insurancePercentage}}%</td>
+                                            <td>{{procedure.payerPercentage}}%</td>
+                                            <td>{{procedure.feeTotal}}$</td>
+                                            <td *ngIf="procedure.status=='N'">New</td>
+                                            <td *ngIf="procedure.status=='C'">Completed</td>
+                                            <td *ngIf="procedure.status=='D'">Denied</td>
+                                            <td *ngIf="procedure.computeType=='IN'">In Network</td>
+                                            <td *ngIf="procedure.computeType=='OUT'">Out Network</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- For old plans -->
+                        <!--<div class="card" *ngFor="let plan of oldPlans">
+                            
+                            <table class="table table-borderless">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Plan ID</th>
+                                        <th>Contract ID</th>
+                                        <th>Description</th>
+                                        <th>From</th>
+                                        <th>To</th>
+                                        <th>Total</th>
+                                        <th>Pay</th>
+                                         <th></th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>{{plan.date}}</td>
+                                        <td>{{plan.uuid}}</td>
+                                        <td>{{plan.contractUuid}}</td>
+                                        <td>{{plan.description}}</td>
+                                        <td>{{plan.from}}</td>
+                                        <td>{{plan.to}}</td>
+                                        <td>${{plan.total}}</td>
+                                        <td>${{plan.pay}}</td>
+                                        <td>
+                                            <input type="submit" value="Details" class="btn get_details" (click)="getDetails()">
+                                        </td> 
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>-->
+                    </div>
+                </div>
+                <!--<div class="col-md-3 col-xs-12">
+                    <h5 class="margin-20">Notifications</h5>
+                    <div class="margin-20 notification">
+                        <div class="notification-data" *ngFor="let notice of (planData$ | async)?.notification">
+                            <p>{{notice.date}}</p>
+                            <p>{{notice.notice}}</p>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+</div>

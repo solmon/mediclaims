@@ -1,0 +1,46 @@
+<div class="row claim_snap_row" >
+    <div class="col-md-10 col-xs-12 claim_snap_div">
+        <div class="row">
+            <div class="col-md-12  claim_inner_row">
+                <div class="card-column">
+                    <div >
+                        <div class="card approved ">
+                            <p class="claim_status" >Claims</p>
+                            <p style="text-align: center;" (click)="checkClaims()" ><i class="material-icons claim_count">assessment</i></p>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="card approved">
+                            <p class="claim_status" >Add Plan</p>
+                            <p style="text-align: center;" (click)="addBenefit()"><i class="material-icons claim_count">add_shopping_cart</i></p>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="card active-status">
+                            <p class="claim_status" >Add Trustee</p>
+                            <p style="text-align: center;" (click)="addProvider()"><i class="material-icons claim_count">local_hospital</i></p>
+                        </div>
+                    </div>
+                    <div >
+                        <div  class="card rejected">
+                            <p class="claim_status" >Enrollment</p>
+                            <p style="text-align: center;" (click)="addEnrolment()" ><i class="material-icons claim_count">account_box</i></p>
+                        </div>
+                    </div>
+                    <div >
+                        <div  class="card rejected">
+                            <p class="claim_status" >Add Rule</p>
+                            <p style="text-align: center;" (click)="addRule()" ><i class="material-icons claim_count">note_add </i></p>
+                        </div>
+                    </div>
+                    <div >
+                        <div class="card approved ">
+                            <p class="claim_status" >Add Member</p>
+                            <p style="text-align: center;" (click)="addMember()" ><i class="material-icons claim_count">account_box</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+---
+Profiles:
+  ThreeOrgsGenesis:
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+      - *OrdererOrg
+    Consortiums:
+      InsuranceConsortium:
+        Organizations:
+        - *InsuranceOrg
+        - *CustomerOrg
+        - *HospitalOrg
+  ThreeOrgsChannel:
+    Consortium: InsuranceConsortium
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - *InsuranceOrg
+      - *CustomerOrg
+      - *HospitalOrg
+Organizations:
+- &OrdererOrg
+  Name: OrdererOrg
+  ID: OrdererMSP
+  MSPDir: cli/peers/ordererOrganizations/orderer-org/msp
+- &InsuranceOrg
+  Name: InsuranceOrgMSP
+  ID: InsuranceOrgMSP
+  MSPDir: cli/peers/peerOrganizations/insurance-org/msp
+  AnchorPeers:
+  - Host: insurance-peer
+    Port: 7051
+- &CustomerOrg
+  Name: CustomerOrgMSP
+  ID: CustomerOrgMSP
+  MSPDir: cli/peers/peerOrganizations/customer-org/msp
+  AnchorPeers:
+  - Host: customer-peer
+    Port: 7051
+- &HospitalOrg
+  Name: HospitalOrgMSP
+  ID: HospitalOrgMSP
+  MSPDir: cli/peers/peerOrganizations/hospital-org/msp
+  AnchorPeers:
+  - Host: hospital-peer
+    Port: 7051
+Orderer: &OrdererDefaults
+  OrdererType: solo
+  Addresses:
+  - orderer0:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+  Organizations:
+
+Application: &ApplicationDefaults
+  Organizations:

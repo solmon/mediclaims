@@ -1,0 +1,20 @@
+<div class="dialog-title">{{title}}</div>
+<div class="dialog-content">
+    <div class="card pat_details_card">
+        <table class="table table-borderless">
+            <thead>
+
+                <th>Service Code</th>
+                <th>Service Title</th>
+                <th>Fees Total</th>
+            </thead>
+            <tbody>
+
+                <td><input type="text" class="form-control pat_input" placeholder value required #serviceCode></td>
+                <td><input type="text" class="form-control pat_input" placeholder value required #serviceTitle></td>
+                <td><input type="text" class="form-control pat_input" placeholder value required #feeTotal></td>
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" value="Add Service" class="btn btn-primary get_details" (click)="addService(serviceCode.value,serviceTitle.value,feeTotal.value)">
+</div>

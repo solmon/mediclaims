@@ -1,0 +1,105 @@
+<!-- <div class="top-section">
+    <div class="back-arrow">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <span class="arrow-key">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+          </span>
+                    <span class="arrow-text">Claim Details</span>
+                    <br/>
+                    <span class="arrow-val">{{claimData?.title}}</span>
+                </div>
+                <div class="col-md-6 col-xs-12 padding">
+                    <span class="plan-val">{{claimData?.planName}}</span>
+                    <br/>
+                    <span class="plan-val-new">
+            Plan ID:
+            <b>{{claimData?.planId}}</b>
+          </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid margin-25">
+    <div class="row">
+        <div class="col-md-8 col-xs-12">
+            <div class="content-section">
+                <div class="row padding-30">
+                    <div class="col-md-4 col-xs-12 text-center">
+                        <span>Claim ID: </span>
+                        <b>{{claimData?.claimID}}</b>
+                    </div>
+                    <div class="col-md-4 col-xs-12 text-center">
+                        <span>Date: </span>
+                        <b>{{claimData?.date}}</b>
+                    </div>
+                    <div class="col-md-4 col-xs-12 text-center">
+                        <span>Status: </span>
+                        <b>{{claimData?.status}}</b>
+                    </div>
+                </div>
+                <div class="row padding-30">
+                    <div class="col-md-7 col-xs-12">
+                        <div class="pays min-height-100 margin-left-45 data-sec">
+                            <div class="text-center padding-left">
+                                <p>Insurance Pays</p>
+                                <p>{{claimData?.insurancePay | currency}}</p>
+                            </div>
+                            <div class="text-center">
+                                <p>&nbsp;</p>
+                                <p>+</p>
+                            </div>
+                            <div class="text-center">
+                                <p>You Pay</p>
+                                <p>{{claimData?.yourPay | currency}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-xs-12 text-center">
+                        <div class="min-height-100 equal-sym">=</div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="pays min-height-100 margin-right text-center">
+                            <p>Total</p>
+                            <p>{{claimData?.total | currency}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 align-right">
+                        <button class="btn btn-md btn-custom">Reject</button>
+                        <button class="btn btn-md btn-custom margin-left-5" (click)="approveClaim();">Approve</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-low-section">
+                <h5 class="padding-all">Breakdown Details</h5>
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Insurance Pays</th>
+                            <th>You Pay</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of claimData?.breakdown">
+                            <td>{{item.name}}</td>
+                            <td>{{item.insurancePay | currency}}</td>
+                            <td>{{item.yourPay | currency}}</td>
+                            <td>{{item.total | currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+            <div class="graph-section">
+                <p>Your Expenses</p>
+                <div style="display: block">
+                    <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"></canvas>
+                </div>
+            </div>
+        </div>
+    </div> -->

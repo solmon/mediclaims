@@ -1,0 +1,27 @@
+    .sidebar-sticky {
+        top: 0;
+        height: calc(100vh + 88px);
+        overflow-x: hidden;
+        overflow-y: auto;
+        background-color: #34ACA7;
+        position: sticky;
+    }
+    
+    .side-items {
+        color: white;
+        cursor: pointer;
+        font-size: 13px;
+        text-decoration: none;
+    }
+    
+    .active-side {
+        background: #70c4c1;
+        color: #1f6764;
+        font-weight: 600;
+    }
+    
+    @media screen and (max-width:767px) {
+        .sidebar-sticky {
+            height: auto;
+        }
+    }

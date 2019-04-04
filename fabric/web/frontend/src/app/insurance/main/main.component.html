@@ -1,0 +1,17 @@
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <a routerLink="landingpage" class="my-0 mr-md-auto font-weight-normal">
+        <h5 class="my-0 mr-md-auto font-weight-normal">Zigma Insurance</h5>
+    </a>
+    <nav class="my-2 my-md-0 mr-md-3" style="cursor: pointer !important;margin-right: 0 !important;">
+        <a class="p-2 text-dark" (click)="logout()">Logout</a>
+        <!-- <a class="p-2 text-dark" routerLink="/blocks" routerLinkActive="active-link">Blocks</a> -->
+    </nav>
+</div>
+<div class="container-fluid customer-dashboard">
+    <router-outlet></router-outlet>
+</div>
+<footer class="footer">
+    <div class="container">
+        <span class="">© 2018 Zigma Insurance Inc.</span>
+    </div>
+</footer>

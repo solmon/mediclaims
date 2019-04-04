@@ -1,0 +1,49 @@
+<div class="dialog-title">Add Rule</div>
+<div class="dialog-content">
+    <div class="card pat_details_card">
+            <table class="table table-borderless">
+                <thead>
+                    <!--<th>ICD</th>-->
+                    <th>Benefit</th>
+                    <th>Rule Code</th>
+                    
+                </thead>
+                <tbody>
+                    <!--<td><input type="text" class="form-control pat_input" placeholder value required #ICD></td>-->
+                    <!--<td><input type="text" class="form-control pat_input" placeholder value required #procedure></td>-->
+                    <td>
+                        <!--<select class="form-control pat_input provider_drop_down">
+                            <option value="providers" (click)="providerSelected('provider')">providers</option>
+                            <option *ngFor="let data of providerList" value = {{data}} placeholder value required #provider (click)="providerSelected(provider.value)" >{{data}}</option>
+                        </select>-->
+                        <mat-select  placeholder="benefits" panelClass="example-panel">
+                            <mat-option *ngFor="let data of benefitList; let i = index" value = {{data.benefitTitle}} placeholder value required #benefit (click)="benefitSelected(benefit.value,i)" >{{data.benefitTitle}}</mat-option>
+                        </mat-select>
+                    </td>
+                    <td>
+                        <!--<select class="form-control pat_input">
+                            <option value="prcedures" >procedures</option>
+                            <option *ngFor="let data of procedureList" value = {{data}} placeholder value required #procedure (click)="procedureSelected(procedure.value)">{{data}}</option>
+                        </select>-->
+                        <input type="text" class="form-control pat_input" placeholder value required #ruleCode>
+                    </td>
+                    
+                </tbody>
+            </table>
+            <table class="table table-borderless">
+                    <thead>
+                        
+                        <th>Coverage Amount</th>
+                        <th>In Coverage</th>
+                        <th>Out Coverage</th>
+                    </thead>
+                    <tbody>
+                           
+                        <td><input type="text" class="form-control pat_input" placeholder value required #coverageAmount></td>
+                        <td><input type="text" class="form-control pat_input" placeholder value required #inCoverage></td>
+                        <td><input type="text" class="form-control pat_input" placeholder value required #outCoverage></td>
+                    </tbody>
+                </table>
+    </div>
+    <input type="submit" value="Add Rule" class="btn btn-primary get_details" (click)="addRule(ruleCode.value,coverageAmount.value,inCoverage.value,outCoverage.value)">
+</div>

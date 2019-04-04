@@ -1,0 +1,34 @@
+<div class="row claim_snap_row">
+    <div class="col-md-10 col-xs-12 claim_snap_div">
+        <div class="row">
+            <div class="col-md-12  claim_inner_row">
+                <div [ngClass]="{'card-column': true, 'physician-check': !isProvider}">
+                    <div>
+                        <div class="card approved">
+                            <p class="claim_status">Procedures</p>
+                            <p style="text-align: center;" (click)="raiseClaims()"> <i class="material-icons claim_count">assessment</i></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card active-status">
+                            <p class="claim_status">HCE</p>
+                            <p style="text-align: center;" (click)="raiseHealthCareEvent()"><i class="material-icons claim_count">assignment</i></p>
+                        </div>
+                    </div>
+                    <div *ngIf="isProvider">
+                        <div class="card rejected">
+                            <p class="claim_status">Add Physician</p>
+                            <p style="text-align: center;" (click)="addPhysician()"><i class="material-icons claim_count">account_box</i></p>
+                        </div>
+                    </div>
+                    <div *ngIf="isProvider"> 
+                        <div class="card active-status" >
+                            <p class="claim_status">Add Service</p>
+                            <p style="text-align: center;" (click)="showService()"><i class="material-icons claim_count">add</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

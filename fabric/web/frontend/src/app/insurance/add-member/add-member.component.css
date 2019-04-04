@@ -1,0 +1,28 @@
+/* popup css */
+
+.dialog-title {
+    height: 44px;
+    background-color: #34ACA7;
+    text-align: center;
+    padding-top: 5px;
+    color: #FFFFFF;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.dialog-content {
+    padding: 34px;
+    text-align: center;
+    color: #34ACA7;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.dialog-content:hover {
+    cursor: pointer;
+}

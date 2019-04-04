@@ -1,0 +1,151 @@
+<div class="main" style="margin-left: 30px">
+    <!--<div class="card claim_status_card">
+        <p>Claims Status:
+            <b>New</b>
+        </p>
+    </div>-->
+    <p class="pat_details_heading">Patient Details</p>
+    <div class="card pat_details_card">
+        <table class="table table-borderless table-responsive">
+            <thead>
+                <tr>
+                    <th>Insurance Provider</th>
+                    <th>Insurance Plan</th>
+                    <th>Coverage Amount</th>
+                    <th>Monthly Premium</th>
+                    <th>Insurance Category</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{benefitDetails.payerTitle}}</td>
+                    <td>{{benefitDetails.benefitTitle}}</td>
+                    <td>{{benefitDetails.coverageAmount}}</td>
+                    <td>{{benefitDetails.monthlyPremium}}</td>
+                    <td>{{benefitDetails.typeOfBenefit}}</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Patient UID</th>
+                    <th>Birth Date</th>
+                    <th>Email</th>
+                    <th>SSN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{patientDetails.patientName}}</td>
+                    <td>{{patientDetails.patientUid}}</td>
+                    <td>{{patientDetails.dob}}</td>
+                    <td>{{patientDetails.patientEmail}}</td>
+                    <td>{{patientDetails.ssn}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="pat_details_heading">Diagnosis & Details</p>
+    <div class="card pat_details_card">
+        <table class="table table-borderless">
+            <thead>
+                <!--<th>Physican</th>-->
+                <th>Diagnosis Description</th>
+            </thead>
+            <tbody>
+                <!--<td><input type="text" class="form-control pat_input" placeholder value required #physician></td>-->
+                <td><input type="text" class="form-control pat_input" placeholder value required #description></td>
+            </tbody>
+        </table>
+    </div>
+    <p class="pat_details_heading">Billing & Insurance</p>
+    <div class="card pat_billing_card">
+        <!--<p>Bill To</p>
+        <div>
+            <mat-checkbox checked="true">Patient</mat-checkbox>
+            <mat-checkbox class="padding-30" checked="true">Primary Insurance</mat-checkbox>
+            <mat-checkbox class="padding-30">Secondary Insurance</mat-checkbox>
+            <mat-checkbox class="padding-30">Tertiary Insurance</mat-checkbox>
+        </div>-->
+        <div>
+            <button class="btn btn-md cusotm-btn float-right" (click)="addProcedure();">Add Procedure</button>
+        </div>
+        <p>Detail item</p>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>LN</th>
+                        <th>Date From</th>
+                        <th>Date To</th>
+                        <th>Provider</th>
+                        <th>Procedure</th>
+                        <th>Fee</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of procedureDetails; let i = index">
+                        <td>{{item.procedureCode}}</td>
+                        <td>{{item.dateFrom}}</td>
+                        <td>{{item.dateTo}}</td>
+                        <td>{{providerName[i]}}</td>
+                        <td>{{item.procedureTitle}}</td>
+                        <!--<td></td>
+                        <td>99213</td>
+                        <td>0001</td>-->
+                        <td>${{item.feeTotal}}</td>
+                        <td>
+                            <input type="submit" value="Delete" class="btn btn-primary delete" (click)="deleteProcedure(i,item.feeTotal)">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <!--<td></td>
+                        <td></td>
+                        <td></td>-->
+                        <td>Total</td>
+                        <td>${{totalCost}}</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--<p>Additional Documents</p>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="all-image">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="single-image" *ngFor="let item of myFiles ; let i=index">
+                                <p>{{item.name}}</p>
+                                <p (click)="removeFiles(i);">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 padding-top">
+                <div class="file">
+                    <label for="file-input">Add Documents</label>
+                    <input type="file" id="file-input" multiple (change)="onFileChange($event)">
+                </div>
+            </div>
+
+        </div>-->
+        <p>Comments</p>
+        <textarea placeholder="Immediate attention required" #comments></textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-12 margin-bottom">
+            <button class="btn btn-md cusotm-btn float-right" (click)="raiseHce(comments.value,description.value);">Raise
+                HCE</button>
+            <button class="btn btn-md cusotm-btn float-right" routerLink="/provider/landingpage">Cancel</button>
+        </div>
+    </div>
+</div>

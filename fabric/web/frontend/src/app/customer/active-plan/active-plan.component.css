@@ -1,0 +1,270 @@
+.top-section {
+    width: 100%;
+    min-height: 150px;
+    background: url('../../../assets/iStock_000004831209Large.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.back-arrow {
+    position: absolute;
+    padding-top: 2%;
+    padding-left: 2%;
+    font-family: Open Sans, Semibold;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.back-arrow:hover {
+    cursor: pointer;
+}
+
+.container-fluid {
+    /* padding-right: 2.5% !important;
+    padding-left: 2.5% !important; */
+}
+
+.margin-top {
+    margin-top: 14px;
+}
+
+.content-section {
+    margin-top: 14px;
+    background-color: rgba(243, 243, 243, 1);
+    min-height: 500px;
+    padding: 24px;
+}
+
+.active-plan {
+    font-family: Open Sans, Semibold;
+    font-size: 19px;
+    color: #434343;
+}
+
+.plan_name {
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.plan_id {
+    font-family: Open Sans, Bold;
+    font-size: 20px;
+    color: #000000;
+    text-align: right;
+}
+
+.plan_id span {
+    font-weight: 600;
+}
+
+.content-sub-section {
+    font-family: Open Sans, Regular;
+    font-size: 16px;
+    color: #707070;
+    padding-top: 13px;
+}
+
+.row>.data-list-box {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+}
+
+.data-box {
+    min-height: 100px;
+    background-color: rgba(255, 255, 255, 1);
+    font-family: Open Sans, Regular;
+    font-size: 18px;
+    color: #5A5A5A;
+    padding-top: 14px;
+    text-align: center;
+    margin: 0px 75px;
+}
+
+.data-box p:nth-child(2) {
+    font-family: Open Sans, Bold;
+    font-size: 24px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.spending {
+    font-family: Open Sans, Semibold;
+    font-size: 17px;
+    color: #000000;
+    padding-right: 100px;
+    text-align: right;
+}
+
+.hospital {
+    font-family: Open Sans, Semibold;
+    font-size: 17px;
+    color: #000000;
+    padding-left: 100px;
+}
+
+.claim-section {
+    min-height: 360px;
+    background-color: #E4E4E4;
+    padding: 25px;
+}
+
+
+/* .margin-20 {
+    margin-left: 20px;
+} */
+
+.network {
+    background-color: lightgray;
+    margin-top: 15px;
+    min-height: 100px;
+}
+
+.notification {
+    background-color: #FFFFFF;
+    min-height: 215px;
+    margin-top: 15px;
+}
+
+.notification-data {
+    font-family: Open Sans, Regular;
+    font-size: 14px;
+    color: #707070;
+    padding: 10px;
+}
+
+.notification-data p {
+    margin-bottom: 0.3rem;
+}
+
+.notification-data p:nth-child(2) {
+    color: #000000;
+}
+
+.notify-badge {
+    position: absolute;
+    height: 27px;
+    left: 4.5rem;
+    width: 10rem;
+    text-align: center;
+    line-height: 2rem;
+    font-family: Open Sans, Regular;
+    font-size: 14px;
+    border-radius: 1%;
+    color: #FFFFFF;
+}
+
+.in-network {
+    background: #F9A64A;
+}
+
+.out-network {
+    background: #25B8A3;
+}
+
+.padding-top-30 {
+    padding-top: 30px;
+}
+
+.margin-left-2 {
+    margin-left: 2px;
+}
+
+.table th {
+    color: #707070;
+    font-family: Open Sans, Regular;
+    font-size: 14px;
+}
+
+.card {
+    padding-right: 1.5rem;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.in_network_badge {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #ffa500;
+    margin-bottom: 0.7rem;
+}
+
+.out_network_badge {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #198c8c;
+    margin-bottom: 0.7rem;
+}
+
+.approved_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #329932;
+    margin-bottom: 0.7rem;
+}
+
+.waiting_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #0080ff;
+    margin-bottom: 0.7rem;
+}
+
+.rejected_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #b20000;
+    margin-bottom: 0.7rem;
+}
+
+.get_details, .get_details:focus {
+    margin-top: -2.9rem;
+    color: white;
+    background: #2078c9;
+    border-radius: 1px;
+    border: none;
+    font-size: 14px;
+    padding: 10px 32px;
+    transition: all 0.3s;
+    box-shadow: none;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.get_details:hover {
+    background: #054988; 
+}
+
+@media screen and (max-width: 600px) {
+    .plan_id {
+        text-align: left;
+    }
+    .spending {
+        padding-right: 0px;
+        text-align: center;
+    }
+    .hospital {
+        padding-left: 0px;
+        text-align: center;
+    }
+    .margin-20 {
+        margin-left: 0px;
+    }
+}

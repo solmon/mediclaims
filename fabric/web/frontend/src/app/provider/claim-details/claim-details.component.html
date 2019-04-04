@@ -1,0 +1,143 @@
+<div class="main" style="margin-left: 30px">
+    <div class="card claim_status_card">
+        <p>Claims Status:
+            <b>New</b>
+        </p>
+    </div>
+    <p class="pat_details_heading">Patient Details</p>
+    <div class="card pat_details_card">
+        <table class="table table-borderless table-responsive">
+            <thead>
+                <tr>
+                    <th>Insurance Plan</th>
+                    <th>SSN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{claimObject.benefitTitle}}</td>
+                    <td>{{claimObject.ssn}}</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>Insurance Provider</th>
+                    <th>Co-pay</th>
+                    <th>Group Plan</th>
+                    <th>Group Number</th>
+                    <th>Employee ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{claimObject.payerTitle}}</td>
+                    <td>Yes</td>
+                    <td>TekSystems</td>
+                    <td>1</td>
+                    <td>{{claimObject.employeeId}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="pat_details_heading">Diagnosis & Details</p>
+    <div class="card pat_details_card">
+        <table class="table table-borderless">
+            <thead>
+                <th>Physican</th>
+                <th>Diagnosis Description</th>
+            </thead>
+            <tbody>
+                <td><input type="text" class="form-control pat_input" placeholder value required #physician></td>
+                <td><input type="text" class="form-control pat_input" placeholder value required #description></td>
+            </tbody>
+        </table>
+    </div>
+    <p class="pat_details_heading">Billing & Insurance</p>
+    <div class="card pat_billing_card">
+        <!--<p>Bill To</p>
+        <div>
+            <mat-checkbox checked="true">Patient</mat-checkbox>
+            <mat-checkbox class="padding-30" checked="true">Primary Insurance</mat-checkbox>
+            <mat-checkbox class="padding-30">Secondary Insurance</mat-checkbox>
+            <mat-checkbox class="padding-30">Tertiary Insurance</mat-checkbox>
+        </div>-->
+        <div>
+            <button class="btn btn-md cusotm-btn float-right" (click)="addProcedure();">Add Procedure</button>
+        </div>
+        <p>Detail item</p>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>LN</th>
+                        <th>Date From</th>
+                        <th>Date To</th>
+                        <th>Provider</th>
+                        <th>Procedure</th>
+                        <!--<th>M1</th>
+                        <th>M2</th>
+                        <th>FQ</th>-->
+                        <th>Fee</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr *ngFor="let item of procedureDetails">
+                        <td>{{item.ICD}}</td>
+                        <td>{{item.fromDate}}</td>
+                        <td>{{item.toDate}}</td>
+                        <td>{{item.provider}}</td>
+                        <td>{{item.procedure}}</td>
+                        <!--<td></td>
+                        <td>99213</td>
+                        <td>0001</td>-->
+                        <td>${{item.cost}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <!--<td></td>
+                        <td></td>
+                        <td></td>-->
+                        <td>Total</td>
+                        <td>${{totalCost}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Additional Documents</p>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="all-image">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="single-image" *ngFor="let item of myFiles ; let i=index">
+                                <p>{{item.name}}</p>
+                                <p (click)="removeFiles(i);">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 padding-top">
+                <div class="file">
+                    <label for="file-input">Add Documents</label>
+                    <input type="file" id="file-input" multiple (change)="onFileChange($event)">
+                </div>
+            </div>
+
+        </div>
+        <p>Comments</p>
+        <textarea placeholder="Immediate attention required" #comments></textarea>
+    </div>
+    <div class="row">
+        <div class="col-md-12 margin-bottom">
+            <button class="btn btn-md cusotm-btn float-right" (click)="raiseClaim(physician.value, description.value, claimObject, comments.value);">Raise Claim</button>
+            <button class="btn btn-md cusotm-btn float-right">Save</button>
+            <button class="btn btn-md cusotm-btn float-right">Cancel</button>
+        </div>
+    </div>
+</div>

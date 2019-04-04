@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="card" style="width: 18rem;margin-top: 20px">
+      <div class="card-body">
+          <div class="content">Register</div>
+          <form>
+              <div class="form-group" style="margin-top: 10px">
+                  <input type="ssn" class="form-control" id="ssnid" #ssn aria-describedby="ssnHelp" placeholder="Enter SSN">
+                  <input type="dob" style="margin-top: 5px;" class="form-control" id="dobid" #dob aria-describedby="ssnHelp" placeholder="Enter DOB">
+                  <input type="empID" style="margin-top: 5px;"  class="form-control" id="empid" #emp aria-describedby="ssnHelp" placeholder="Enter Employee ID">
+                  <!-- <input type="patientUID" style="margin-top: 5px;"  class="form-control" id="patientUid" #patientUid aria-describedby="patientUIDHelp" placeholder="Enter Patient UID"> -->
+                  <input type="companyID" style="margin-top: 5px;"  class="form-control" id="companyid" #companyID aria-describedby="companyIDHelp" placeholder="Enter company ID">
+                  <input type="companyName" style="margin-top: 5px;"  class="form-control" id="companyNameid" #companyName aria-describedby="companyNameHelp" placeholder="Enter company Name">
+                  <small id="emailHelp" class="form-text text-muted">Required field.</small>
+              </div>
+          </form>
+          <input type="submit"  (click)="addMember(emp.value,ssn.value,dob.value,companyID.value,companyName.value)" class="btn btn-primary btn-block" value="Add Member">
+      </div>
+  </div>
+</div>

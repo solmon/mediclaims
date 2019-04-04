@@ -1,0 +1,198 @@
+.main {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+}
+
+.claim_status_card {
+    margin-top: 1.5rem;
+    background: #EEEEEE;
+    border: 0.2px solid #707070;
+    color: #989696;
+    padding: 1.3rem;
+}
+
+.claim_status_card p {
+    margin-bottom: 0;
+    margin-top: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.claim_status_card p b {
+    color: #000000;
+    margin-left: 0.5rem;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.pat_details_card {
+    background: #EEEEEE;
+    border: none;
+    padding: 1.3rem;
+    padding-bottom: 0rem;
+}
+
+.pat_details_heading {
+    font-size: 20px;
+    color: black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.pat_details_card .table th {
+    color: #6C6C6C;
+    font-size: 16px;
+    font-weight: 200;
+    padding-bottom: 0;
+}
+
+.pat_details_card.table td {
+    color: #000000;
+    font-size: 16px;
+    padding-bottom: 2rem;
+}
+
+.pat_billing_card {
+    background: #EEEEEE;
+    border: none;
+    padding: 1.3rem;
+}
+
+.pat_billing_card .table thead th {
+    background-color: #34ACA7;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-family: Open Sans, Semibold;
+}
+
+.pat_billing_card .table tbody {
+    color: #6C6C6C;
+    font-size: 14px;
+    font-family: Open Sans, Regular;
+    background-color: #FFFFFF;
+}
+
+.pat_billing_card tr:last-child td {
+    border: 0px !important;
+}
+
+.pat_billing_card tr:last-child {
+    border: 1px solid #dee2e6;
+    color: #000000;
+    font-size: 14px;
+    font-family: Open Sans, Semibold;
+    font-weight: 600;
+}
+
+.margin-bottom {
+    margin-bottom: 50px;
+}
+
+.padding-30 {
+    padding-left: 30px;
+}
+
+.padding-top {
+    padding-top: 10px;
+}
+
+
+/* browse file */
+
+.file {
+    position: relative;
+    height: 40px;
+    width: 150px;
+}
+
+.file>input[type="file"] {
+    position: absoulte;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 150px;
+}
+
+.file>label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #34ACA7;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer
+}
+
+.all-image {
+    min-height: 50px;
+    background-color: #FFFFFF
+}
+
+.single-image {
+    min-height: 40px;
+    background-color: #F3F3F3;
+    margin: 10px;
+    width: 50%;
+    font-family: Open Sans, Regular;
+    font-size: 16px;
+    color: #000000;
+    border: 1px solid #e0e0e0;
+}
+
+.single-image p:nth-child(1) {
+    float: left;
+}
+
+.single-image p:nth-child(2) {
+    float: right;
+}
+
+.single-image p {
+    display: inline;
+    padding-top: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.cusotm-btn {
+    color: white;
+    background-color: #34ACA7;
+    margin: 5px;
+}
+
+
+/* popup css */
+
+.dialog-title {
+    height: 44px;
+    background-color: #34ACA7;
+    text-align: center;
+    padding-top: 5px;
+    color: #FFFFFF;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.dialog-content {
+    padding: 34px;
+    text-align: center;
+    color: #34ACA7;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.dialog-content:hover {
+    cursor: pointer;
+}

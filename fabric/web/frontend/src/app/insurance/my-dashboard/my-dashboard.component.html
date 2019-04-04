@@ -1,0 +1,168 @@
+<div class="row dash_heading">
+    <div class="col-md-2 col-sm-2">
+        <p class="dash">Claims Dashboard</p>
+    </div>
+    <div class="col-md-10 col-sm-10">
+        <p class="dash_time">Date:
+            <small>{{jstoday}}</small>
+        </p>
+    </div>
+</div>
+
+<div class="row tabs_row">
+    <div class="col-lg-12 col-md-12 com-sm-12">
+        <tabset>
+            <tab heading="Active" id="tab1" customClass="tabDiv">
+                <div class="card" *ngFor="let plan of activePlans;let i =index">
+                        <div *ngIf="plan.status === 'N'">
+                                <span class="badge rejected_claim">Procedures Pending</span>
+                            </div>
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Patient Uid</th>
+                                <th>Employee ID</th>
+                                <th>Physician Name</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                                <th>Comments</th>
+                                <th>Claim Total</th>
+                                <th>Insurance Total</th>
+                                <th>Patient Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{plan.patientUid}}</td>
+                                <td>{{plan.employeeId}}</td>
+                                <td>{{plan.physicianName}}</td>
+                                <td>{{plan.treatmentDescription}}</td>
+                                <td>{{plan.date}}</td>
+                                <td>{{plan.comments}}</td>
+                                <td>${{plan.claimTotal}}</td>
+                                <td>${{plan.insuranceTotal}}</td>
+                                <td>${{plan.patientTotal}}</td>
+                                <td>
+                                    <input type="submit" value="Details" class="btn get_details" (click)="getDetails(i)">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table-responsive" *ngIf="showDetailsof[i]">
+                            <table class="table table-bordered" >
+                                <thead>
+                                    <tr style="background: #3079B0">
+                                        <th class="text-white">Procedure Title</th>
+                                        <th class="text-white">Date From</th>
+                                        <th class="text-white">Date To</th>
+                                        <th class="text-white">Provider UID</th>
+                                        <th class="text-white">Insurance Coverage</th>
+                                        <th class="text-white">Insurance Percentage</th>
+                                        <th class="text-white">Payer Percentage</th>
+                                        <th class="text-white">Fee Total</th>
+                                        <th class="text-white">Status</th>
+                                        <th class="text-white">Network</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let procedure of plan.procedures">
+                                        <td>{{procedure.procedureTitle}}</td>
+                                        <td>{{procedure.dateFrom}}</td>
+                                        <td>{{procedure.dateTo}}</td>
+                                        <td>{{procedure.providerUid}}</td>
+                                        <td>{{procedure.insuranceCoverage}}$</td>
+                                        <td>{{procedure.insurancePercentage}}%</td>
+                                        <td>{{procedure.payerPercentage}}%</td>
+                                        <td>{{procedure.feeTotal}}$</td>
+                                        <td *ngIf="procedure.status=='N'">New</td>
+                                        <td *ngIf="procedure.status=='C'">Completed</td>
+                                        <td *ngIf="procedure.status=='D'">Denied</td>
+                                        <td *ngIf="procedure.computeType=='IN'">In Network</td>
+                                        <td *ngIf="procedure.computeType=='OUT'">Out Network</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </tab>
+            <tab heading="All" customClass="tabDiv">
+                <div class="card" *ngFor="let plan of allPlans;let i = index">
+                    <div *ngIf="plan.status === 'N'">
+                        <span class="badge rejected_claim">Procedures Pending</span>
+                    </div>
+                    <div *ngIf="plan.status === 'A'">
+                        <span class="badge approved_claim">Approved</span>
+                    </div>
+                    <table class="table table-borderless">
+                         <thead>
+                                <tr>
+                                    <th>Patient Uid</th>
+                                    <th>Employee ID</th>
+                                    <th>Physician Name</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Comments</th>
+                                    <th>claim Total</th>
+                                    <th>insurance Total</th>
+                                    <th>patient Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{plan.patientUid}}</td>
+                                    <td>{{plan.employeeId}}</td>
+                                    <td>{{plan.physicianName}}</td>
+                                    <td>{{plan.treatmentDescription}}</td>
+                                    <td>{{plan.date}}</td>
+                                    <td>{{plan.comments}}</td>
+                                    <td>${{plan.claimTotal}}</td>
+                                    <td>${{plan.insuranceTotal}}</td>
+                                    <td>${{plan.patientTotal}}</td>
+                                    <td>
+                                        <input type="submit" value="Details" class="btn get_details" (click)="getDetailsall(i)">
+                                    </td>
+                                </tr>
+                            </tbody>
+                    </table>
+                    <div class="table-responsive" *ngIf="showDetailsofall[i]">
+                            <table class="table table-bordered" >
+                               <thead>
+                                        <tr style="background: #3079B0">
+                                                <th class="text-white">Procedure Title</th>
+                                                <th class="text-white">Date From</th>
+                                                <th class="text-white">Date To</th>
+                                                <th class="text-white">Provider UID</th>
+                                                <th class="text-white">Insurance Coverage</th>
+                                                <th class="text-white">Insurance Percentage</th>
+                                                <th class="text-white">Payer Percentage</th>
+                                                <th class="text-white">Fee Total</th>
+                                                <th class="text-white">Status</th>
+                                                <th class="text-white">Network</th>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr *ngFor="let procedure of plan.procedures">
+                                            <td>{{procedure.procedureTitle}}</td>
+                                            <td>{{procedure.dateFrom}}</td>
+                                            <td>{{procedure.dateTo}}</td>
+                                            <td>{{procedure.providerUid}}</td>
+                                            <td>{{procedure.insuranceCoverage}}$</td>
+                                            <td>{{procedure.insurancePercentage}}%</td>
+                                            <td>{{procedure.payerPercentage}}%</td>
+                                            <td>{{procedure.feeTotal}}$</td>
+                                            <td *ngIf="procedure.status=='N'">New</td>
+                                            <td *ngIf="procedure.status=='C'">Completed</td>
+                                            <td *ngIf="procedure.status=='D'">Denied</td>
+                                            <td *ngIf="procedure.computeType=='IN'">IN Network</td>
+                                            <td *ngIf="procedure.computeType=='OUT'">OUT Network</td>
+                                            
+                                        </tr>
+                                    </tbody>
+                            </table>
+                        </div>
+                </div>
+            </tab>
+
+        </tabset>
+    </div>
+</div>

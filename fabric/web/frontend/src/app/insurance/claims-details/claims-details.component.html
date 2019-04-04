@@ -1,0 +1,253 @@
+<div class="row dash_heading">
+    <div class="col-md-2">
+        <p class="dash">Claim Details</p>
+    </div>
+    <div class="col-md-10">
+        <p class="dash_time">Date: <small>05/2018 12:30 PM</small></p>
+    </div>
+</div>
+
+<div class="card" style="padding: 0px; background: #f3f3f3">
+  <div class="card-header text-white" style="background: #3079B0">
+    Insurance Plan
+  </div>
+  <div class="card-body row">
+    <div class="col-md-7">
+        <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th>Plan ID</th>
+                    <th>Insurance ID</th>
+                    <th>Plan Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{claimDetails?.planid}}</td>
+                    <td>{{claimDetails?.insuranceid}}</td>
+                    <td>{{claimDetails?.planname}}</td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th>Patient Name</th>
+                    <th>Date of Birth</th>
+                    <th>SSN</th>
+                    <th>Co-pay</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{claimDetails?.patientname}}</td>
+                    <td>{{claimDetails?.dob}}</td>
+                    <td>{{claimDetails?.ssn}}</td>
+                    <td>{{claimDetails?.copay}}</td>
+                  </tr>
+                </tbody>
+                <thead>
+                  <tr>
+                    <th>Group Plan</th>
+                    <th>Group Number</th>
+                    <th>Employee ID</th>
+                    <th>Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{claimDetails?.groupplan}}</td>
+                    <td>{{claimDetails?.groupnumber}}</td>
+                    <td>{{claimDetails?.empid}}</td>
+                    <td>{{claimDetails?.address}}</td>
+                  </tr>
+                </tbody>
+            </table>            
+    </div>
+    <div class="col-md-5">
+        <div class="card-deck row text-center">
+            <div class="card" style="padding: 0px">
+                <div class="card-header bg-primary text-white">
+                    Total Coverage
+                </div>
+                <div class="card-body">
+                    {{claimDetails?.totalcoverage}}
+                </div>
+            </div>
+            <div class="card" style="padding: 0px">
+                <div class="card-header bg-info text-white">
+                    Claimed
+                </div>
+                <div class="card-body">
+                    {{claimDetails?.claimed}}
+                </div>
+            </div>
+            <div class="card" style="padding: 0px">
+                <div class="card-header bg-success text-white">
+                    Remaining
+                </div>
+                <div class="card-body">
+                    {{claimDetails?.remaining}}
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="padding: 0px; background: #f3f3f3; border-bottom: 1px solid #CCC; margin-bottom: 0px">
+  <div class="card-header text-white" style="background: #3079B0">
+    Claim
+  </div>
+  <div class="row claim-det-padding">
+      <div class="claim-det-padding">
+        <span>Date : </span>
+        <span>{{claimDetails?.claim?.date}}</span>
+      </div>
+      <div class="claim-det-padding">
+        <span>Type : </span>
+        <span>{{claimDetails?.claim?.type}}</span>
+      </div>
+      <div class="claim-det-padding">
+        <span>Status : </span>
+        <span>{{claimDetails?.claim?.status}}</span>
+      </div>
+      <div class="claim-det-padding">
+        <span>Age : </span>
+        <span>{{claimDetails?.claim?.age}}</span>
+      </div>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+        Provider And Patient Details
+    </li>
+    <li class="list-group-item" style="background: #f3f3f3">
+        <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th>Provider ID</th>
+                <th>Provider Name</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{claimDetails?.claim?.provpatdetails.providerid}}</td>
+                <td>{{claimDetails?.claim?.provpatdetails.providername}}</td>
+                <td>{{claimDetails?.claim?.provpatdetails.address}}</td>
+              </tr>
+            </tbody>
+            <thead>
+              <tr>
+                <th>Patient ID</th>
+                <th>Patient Name</th>
+                <th>From</th>
+                <th>To</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{claimDetails?.claim?.provpatdetails?.patientid}}</td>
+                <td>{{claimDetails?.claim?.provpatdetails?.patientname}}</td>
+                <td>{{claimDetails?.claim?.provpatdetails?.from}}</td>
+                <td>{{claimDetails?.claim?.provpatdetails?.to}}</td>
+              </tr>
+            </tbody>
+        </table>   
+    </li>
+    <li class="list-group-item">Diagnosis and Treatment</li>
+    <li class="list-group-item" style="background: #f3f3f3">
+        <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th>Physician</th>
+                    <th>Diagnosis Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{claimDetails?.claim?.diagtreatment?.physician}}</td>
+                    <td>{{claimDetails?.claim?.diagtreatment?.diagnosis}}</td>
+                  </tr>
+                </tbody>
+        </table>   
+        <span style="padding: 0px 0px 0px 10px">Treatment Details</span>
+        <div *ngFor="let det of claimDetails?.claim?.diagtreatment?.treatmentdetails">
+            <p style="background: #FFF; padding: 10px">{{det.desc}}</p>
+        </div>
+    </li>
+    <li class="list-group-item">Billing and Insurance</li>
+    <li class="list-group-item" style="background: #f3f3f3">
+        <p>Detail item</p>
+        <div class="table-responsive">
+            <table class="table table-bordered" >
+                <thead>
+                    <tr style="background: #3079B0">
+                        <th class="text-white">LN</th>
+                        <th class="text-white">Date From</th>
+                        <th class="text-white">Date To</th>
+                        <th class="text-white">Provider</th>
+                        <th class="text-white">ICD Code</th>
+                        <th class="text-white">Diagnosis</th>
+                        <th class="text-white">Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let det of claimDetails?.claim?.billinsurance">
+                        <td>{{det.ln}}</td>
+                        <td>{{det.datefrom}}</td>
+                        <td>{{det.dateto}}</td>
+                        <td>{{det.provider}}</td>
+                        <td>{{det.icdcode}}</td>
+                        <td>{{det.diagnosis}}</td>
+                        <td>{{det.fee}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><h5>Amount Payable</h5></td>
+                        <td>$240.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>Additional Documents</p>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="all-image">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="single-image" *ngFor="let item of myFiles ; let i=index">
+                                <p>{{item.name}}</p>
+                                <p (click)="removeFiles(i);">
+                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="file">
+                    <label for="file-input">Add Documents</label>
+                    <input type="file" id="file-input" multiple (change)="onFileChange($event)">
+                </div>
+            </div>
+
+        </div>
+        <p>Comments</p>
+        <textarea class="col-md-8" placeholder="Immediate attention required"></textarea>
+    </li>
+  </ul>
+</div>
+
+<div class="row">
+    <div class="col-md-12 margin-bottom ">
+        <button class="btn-md custom-btn float-right">Submit</button>
+        <button class="btn-md custom-btn float-right">Save</button>
+        <button class="btn-md custom-btn float-right" (click)="cancel()">Cancel</button>
+    </div>
+</div>
+

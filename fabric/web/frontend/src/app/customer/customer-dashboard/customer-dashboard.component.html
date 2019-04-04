@@ -1,0 +1,19 @@
+<div class="top-section">
+</div>
+<div class="row" style="margin-bottom: 2.5rem;">
+    <div class="col-md-8 welcome-content">
+        <p class="welcome-head">
+            Welcome {{toTitleCase(userName)}}! We Have Plans Just Right For You.
+        </p>
+        <p class="welcome-desc">Click below to browse your active plan. We at Sigma can provide you best services based on your needs. We are here to help you. Start now!</p>
+        <!-- <button class="btn btn-lg btn-primary" style="margin-right: 1rem;" (click)="linkplan();">Link Your Plans</button> -->
+        <button class="btn btn-lg btn-primary" (click)="claimDashboard();">Dashboard</button>
+    </div>
+    <div class="col-md-4 welcome-content">
+        <div class="insurance-section">
+            <div class="insurance">Your <br/>Zigma Insurance</div>
+            <div class="insurance-id">{{getPatientID()}}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="dialog-title">Details</div>
+<div class="dialog-content">
+    <div class="card pat_details_card">
+            <table class="table table-borderless">
+                <thead>
+                    <th>ICD</th>
+                    <th>Provider</th>
+                    <th>Procedure</th>
+                    
+                </thead>
+                <tbody>
+                    <td><input type="text" class="form-control pat_input" placeholder value required #ICD></td>
+                    <!--<td><input type="text" class="form-control pat_input" placeholder value required #procedure></td>-->
+                    <td>
+                        <select class="form-control pat_input">
+                            <option value="providers" (click)="providerSelected('provider')">providers</option>
+                            <option *ngFor="let data of providerList" value = {{data}} placeholder value required #provider (click)="providerSelected(provider.value)" >{{data}}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-control pat_input">
+                            <option value="prcedures" >procedures</option>
+                            <option *ngFor="let data of procedureList" value = {{data}} placeholder value required #procedure (click)="procedureSelected(procedure.value)">{{data}}</option>
+                        </select>
+                    </td>
+                    
+                </tbody>
+            </table>
+            <table class="table table-borderless">
+                    <thead>
+                        
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Cost</th>
+                    </thead>
+                    <tbody>
+                           
+                        <td><input type="date" class="form-control pat_input" placeholder value required #fromDate></td>
+                        <td><input type="date" class="form-control pat_input" placeholder value required #toDate></td>
+                        <td><input type="text" class="form-control pat_input" placeholder value required #cost></td>
+                    </tbody>
+                </table>
+    </div>
+    <input type="submit" value="Get Details" class="btn btn-primary get_details" (click)="activeClaim(ICD.value,cost.value,fromDate.value,toDate.value);">
+</div>

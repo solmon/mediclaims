@@ -1,0 +1,136 @@
+.dash_time {
+    float: right;
+    color: #6C6C6C;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 2;
+}
+
+.dash_time small {
+    color: #6C6C6C;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.dash_heading {
+    padding: 1.2rem 1.1rem;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);   
+}
+
+.dash {
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+}
+
+.tabs_row {
+    padding-top: 3rem;
+}
+
+.tabDiv {
+    background: #f6f6f6;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 2rem;
+}
+
+.get_details, .get_details:focus {
+    margin-top: -2.9rem;
+    color: white;
+    background: #2078c9;
+    border-radius: 1px;
+    border: none;
+    font-size: 14px;
+    padding: 10px 32px;
+    transition: all 0.3s;
+    box-shadow: none;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.get_details:hover {
+    background: #054988; 
+}
+
+.card {
+    padding-right: 1.5rem;
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.in_network_badge {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #ffa500;
+    margin-bottom: 0.7rem;
+}
+
+.out_network_badge {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #198c8c;
+    margin-bottom: 0.7rem;
+}
+
+.approved_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #329932;
+    margin-bottom: 0.7rem;
+}
+
+.rejected_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #0053b2;
+    margin-bottom: 0.7rem;
+}
+
+/* popup css */
+
+.dialog-title {
+    height: 44px;
+    background-color: #34ACA7;
+    text-align: center;
+    padding-top: 5px;
+    color: #FFFFFF;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    margin-left:-25px;
+    margin-right: -25px; 
+    margin-top: -25px;
+    
+}
+
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.dialog-content {
+    padding: 34px;
+    text-align: center;
+    color: #34ACA7;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.dialog-content:hover {
+    cursor: pointer;
+}

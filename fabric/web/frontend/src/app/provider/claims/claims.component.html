@@ -1,0 +1,24 @@
+<div class="row dash_heading">
+    <div class="col-md-2">
+        <p class="dash">Insurance Claims </p>
+    </div>
+    <div class="col-md-10">
+        <p class="dash_time">Date:
+            <small>05/2018 12:30 PM</small>
+        </p>
+    </div>
+</div>
+<div class="row pat_id_row">
+    <div class="col-md-2">
+        <label for="patient_id" class="pat_label">
+            Enter Patient SSN
+        </label>
+        <input type="text" class="form-control pat_input" placeholder value required #searchValue>
+    </div>
+    <div class="col-md-2">
+        <input type="submit" value="Get Details" class="btn btn-primary get_details" (click)="getDetails(searchValue.value);">
+    </div>
+</div>
+<div class="row" *ngIf="!isLoading && issearchdata">
+    <app-claim-list style="width: 100%;" [searchData]="claimList$ | async"></app-claim-list>
+</div>

@@ -1,0 +1,63 @@
+.dash_time {
+    float: right;
+    color: #6C6C6C;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 2;
+}
+
+.dash_time small {
+    color: #6C6C6C;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+.dash_heading {
+    padding: 1.2rem 3rem;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);   
+}
+
+.dash {
+    color: #6C6C6C;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+}
+
+.pat_id_row {
+    padding: 1.2rem;
+    padding-left: 3rem;
+    background: #EEEEEE;
+}
+
+.get_details, .get_details:focus {
+    margin-top: 1.4rem;
+    color: white;
+    background: #34ACA7;
+    border-radius: 1px;
+    border: none;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 10px 32px;
+}
+
+.pat_label {
+    color: #6C6C6C;
+    font-weight: 200;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.pat_input, .pat_input:focus {
+    background: #EEEEEE;
+    border: none;
+    border-bottom: 1px solid #707070;
+    border-radius: 0;
+    color: #000000;
+    outline: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+

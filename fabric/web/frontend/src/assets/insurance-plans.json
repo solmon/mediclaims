@@ -1,0 +1,50 @@
+[
+  {
+    "date": "04-07-2018",
+    "plan_id": "A48575",
+    "patient_name": "Mary C Netto",
+    "provider": "Medicity",
+    "from": "04-04-2018",
+    "to": "04-07-2018",
+    "total": 470,
+    "pay": 280,
+    "in_network": true,
+    "status": "new"
+  },
+  {
+    "date": "05-07-2018",
+    "plan_id": "A48576",
+    "patient_name": "Sagar Hingal",
+    "provider": "Apollo",
+    "from": "05-04-2018",
+    "to": "05-07-2018",
+    "total": 600,
+    "pay": 100,
+    "in_network": false,
+    "status": "rejected"
+  },
+  {
+    "date": "06-07-2018",
+    "plan_id": "A48577",
+    "patient_name": "Anudeep K",
+    "provider": "Apollo",
+    "from": "06-04-2018",
+    "to": "06-07-2018",
+    "total": 300,
+    "pay": 200,
+    "in_network": false,
+    "status":"new"
+  },
+  {
+    "date": "07-07-2018",
+    "plan_id": "A48578",
+    "patient_name": "Malik S",
+    "provider": "Medicity",
+    "from": "07-04-2018",
+    "to": "07-07-2018",
+    "total": 820,
+    "pay": 490,
+    "in_network": true,
+    "status":"approved"
+  }
+]

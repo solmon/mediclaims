@@ -1,0 +1,126 @@
+.dash_heading {
+    padding: 1.2rem 3rem;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);   
+}
+
+.pat_id_row {
+    padding: 1.2rem;
+    padding-left: 3rem;
+    background: #EEEEEE;
+}
+
+.error-title {
+    height: 44px;
+    background-color: #ac3434;
+    text-align: center;
+    padding-top: 5px;
+    color: #FFFFFF;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+}
+.error-content {
+    padding: 34px;
+    text-align: center;
+    color: #ac3434;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.get_details, .get_details:focus {
+    margin-top: 1.4rem;
+    color: white;
+    background: #34ACA7;
+    border-radius: 1px;
+    border: none;
+    box-shadow: none;
+    font-size: 14px;
+    padding: 10px 32px;
+}
+
+.pat_label {
+    color: #6C6C6C;
+    font-weight: 200;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.pat_input, .pat_input:focus {
+    background: #EEEEEE;
+    border: none;
+    border-bottom: 1px solid #707070;
+    border-radius: 0;
+    color: #000000;
+    outline: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.padding-0 {
+    padding-left: 0px !important;
+}
+
+.search p {
+    font-family: Open Sans, Semibold;
+    font-size: 19px;
+    color: rgba(67, 67, 67, 1);
+}
+
+.plan-name {
+    min-height: 49px;
+    background-color: rgba(25, 126, 198, 1);
+    font-family: Open Sans, Semibold;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    padding: 10px;
+}
+
+.data-list-box {
+    min-height: 200px;
+    display: table;
+    padding-top:2%; 
+}
+
+.data-box {
+    min-height: 170px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(86, 61, 124, .2);
+    font-family: Open Sans, Regular;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 1);
+    /* padding-left: 21px;
+    padding-top: 25px; */
+}
+
+.data-list {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.list-group-item {
+    border: 0px !important;
+}
+
+.custom-btn {
+    background-color: rgba(25, 126, 198, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Open Sans, Regular;
+    font-size: 16px;
+    height: 38px;
+    width: 110px;
+}
+
+.margin-35 {
+    margin: 35px;
+}
+
+.Physician {
+    color: #6C6C6C;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+}
+

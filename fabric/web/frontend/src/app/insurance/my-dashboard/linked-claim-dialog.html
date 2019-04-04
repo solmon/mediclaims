@@ -1,0 +1,16 @@
+<div *ngIf="data?.stat == 'true'">
+    <div class="dialog-title"> Success
+    </div>
+    <div class="dialog-content" (click)="activeClaim();">
+        <p>Claim approved successfully!</p>
+    </div>
+</div>
+
+
+<div *ngIf="data?.stat == 'false'">
+    <div class="dialog-title">Reject</div>
+    <div class="dialog-content" (click)="activeClaim();">
+        <p>The Claim has been rejected!</p>
+    </div>
+</div>
+

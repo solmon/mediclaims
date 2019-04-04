@@ -1,0 +1,94 @@
+Capabilities:
+    Global: &ChannelCapabilities
+        V1_1: true
+    Orderer: &OrdererCapabilities
+        V1_1: true
+    Application: &ApplicationCapabilities
+        V1_1: true
+
+Organizations:
+    - &OrdererOrg
+        Name: OrdererOrg
+        ID: OrdererMSP
+        MSPDir: crypto-config/ordererOrganizations/healthwise.com/msp
+        AdminPrincipal: Role.ADMIN
+    - &zigmainsurance
+        Name: zigmainsurance
+        ID: zigmainsuranceMSP
+        MSPDir: crypto-config/peerOrganizations/zigmainsurance.com/msp
+        AdminPrincipal: Role.ADMIN
+        AnchorPeers:
+            - Host: peer0.zigmainsurance.com
+              Port: 7051
+    - &primecarehospital
+        Name: primecarehospital
+        ID: primecarehospitalMSP
+        MSPDir: crypto-config/peerOrganizations/primecarehospital.com/msp
+        AdminPrincipal: Role.ADMIN
+        AnchorPeers:
+            - Host: peer0.primecarehospital.com
+              Port: 7051
+
+Orderer: &OrdererDefaults
+    OrdererType: solo
+    Addresses:
+        - orderer.healthwise.com:7050
+    BatchTimeout: 2s
+    BatchSize:
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 98 MB
+        PreferredMaxBytes: 512 KB
+    Kafka:
+        Brokers:
+            - 127.0.0.1:9092
+    Organizations:
+        - <<: *zigmainsurance
+        - <<: *primecarehospital
+    Capabilities:
+        <<: *OrdererCapabilities
+
+Application: &ApplicationDefaults
+    Organizations:
+        - <<: *zigmainsurance
+        - <<: *primecarehospital
+    Capabilities:
+        <<: *ApplicationCapabilities
+
+Profiles:
+    HealthwiseOrdererGenesis:
+        Capabilities:
+            <<: *ChannelCapabilities
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - <<: *OrdererOrg
+                - <<: *zigmainsurance
+                - <<: *primecarehospital
+                  AdminPrincipal: ROLE.MEMBER
+            Capabilities:
+                <<: *OrdererCapabilities
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                - <<: *OrdererOrg
+                - <<: *zigmainsurance
+                - <<: *primecarehospital
+                  AdminPrincipal: ROLE.MEMBER
+            Capabilities:
+                <<: *ApplicationCapabilities
+        Consortiums:
+            HealthwiseConsortium:
+                Organizations:
+                    - <<: *OrdererOrg
+                    - <<: *zigmainsurance
+                    - <<: *primecarehospital
+                      AdminPrincipal: ROLE.MEMBER
+    HealthwiseChannel:
+        Capabilities:
+            <<: *ChannelCapabilities
+        Consortium: HealthwiseConsortium
+        Application:
+            <<: *ApplicationDefaults            
+            Capabilities:
+                <<: *ApplicationCapabilities
+

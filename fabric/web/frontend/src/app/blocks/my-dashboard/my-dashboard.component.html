@@ -1,0 +1,22 @@
+<div class="row dash_heading">
+    <div class="col-md-2 col-sm-2">
+        <p class="dash">Blocks Dashboard</p>
+    </div>
+</div>
+
+<div class="row tabs_row">
+    <div class="col-lg-12 col-md-12 com-sm-12">
+        <div *="let block of blockData" class="card" style="width: 30rem;">
+                <div class="card-header">
+                    Block : {{block?.id}}
+                </div>
+            <div class="card-body">
+              <p class="card-text">Fingerprint : {{block?.fingerprint}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Block Type : {{block?.transactions[0]?.type}}</li>
+              <li class="list-group-item">Timestamp : {{block?.transactions[0]?.timestamp}}</li>
+            </ul>
+          </div>
+    </div>
+</div>

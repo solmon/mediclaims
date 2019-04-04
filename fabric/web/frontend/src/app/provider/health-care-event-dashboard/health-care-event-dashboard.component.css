@@ -1,0 +1,215 @@
+.dash_time {
+    float: right;
+    color: #6C6C6C;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 2;
+}
+
+.dash_time small {
+    color: #6C6C6C;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+.dash_heading {
+    padding: 1.2rem 3rem;
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.dash {
+    color: #6C6C6C;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+}
+
+.claim_snap_row {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    padding-left: 4rem;
+    padding-right: 2rem;
+}
+
+.claim_snap_div {
+    background: #EEEEEE;
+    color: #000000;
+    border-right: 1.5rem solid white;
+}
+
+.new_claim_div {
+    background: transparent;
+}
+
+.claim_inner_row {
+    padding: 1.7rem 3rem;
+}
+
+.inbox_p {
+    font-size: 20px;
+    color: #000000;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: 1px;
+    margin-bottom: 26px;
+}
+
+.claim_inbox_row {
+    padding: 0rem 4.8rem 0.8rem 4rem;
+}
+
+.claim_inbox_div {
+    background: #EEEEEE;
+    color: #000000;
+    padding: 1.7rem 1.5rem;
+    /* margin-bottom: 4rem; */
+}
+
+.get_details,
+.get_details:focus {
+    margin-top: -2.9rem;
+    color: white;
+    background: #34ACA7;
+    border-radius: 1px;
+    border: none;
+    font-size: 14px;
+    padding: 10px 32px;
+    transition: all 0.3s;
+    box-shadow: none;
+}
+
+.get_details:hover {
+    background: #1f6764;
+}
+
+.table th {
+    color: #6C6C6C;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.table td {
+    color: #000000;
+    font-size: 16px;
+}
+
+.card {
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.approved {
+    border-top: 5px solid #FD2E58;
+}
+
+.active-status {
+    border-top: 5px solid #EFA83C;
+}
+
+.rejected {
+    border-top: 5px solid #363C3A;
+}
+
+.claim_status {
+    color: #6B6B6B;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.claim_count {
+    color: #6B6B6B;
+    font-size: 56px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.table {
+    margin-bottom: 0rem;
+}
+
+.raise_claim_button {
+    padding: 1rem; 
+    margin-top: 50%; 
+    border-radius: 0rem; 
+    background: #34ACA7; 
+    color: white;
+}
+
+.approved_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #329932;
+    margin-bottom: 0.7rem;
+}
+
+.waiting_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #0080ff;
+    margin-bottom: 0.7rem;
+}
+
+.approved_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #329932;
+    margin-bottom: 0.7rem;
+}
+
+.rejected_claim {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #b20000;
+    margin-bottom: 0.7rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .dash_time {
+        float: left;
+    }
+    .claim_snap_div {
+        border-right: 0px;
+        border-bottom: 1.5rem solid white;
+    }
+}
+.out_network_badge {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #198c8c;
+    margin-bottom: 0.7rem;
+}
+.in_network_badge {
+    padding: 0.5rem 1.5rem;
+    border-radius: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    background: #ffa500;
+    margin-bottom: 0.7rem;
+}

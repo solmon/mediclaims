@@ -1,0 +1,146 @@
+.claim_snap_row {
+    padding-top: 10%;
+    padding-bottom: 1.8rem;
+    padding-left: 4rem;
+    padding-right: 2rem;
+}
+
+.claim_snap_div {
+    background: #EEEEEE;
+    color: #000000;
+    border-right: 1.5rem solid white;
+}
+
+.claim_inner_row {
+    padding: 1.7rem 3rem;
+}
+
+.card {
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    box-shadow: 0 0px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+.approved {
+    border-top: 5px solid #FD2E58;
+}
+
+.active-status {
+    border-top: 5px solid #EFA83C;
+}
+
+.rejected {
+    border-top: 5px solid #363C3A;
+}
+
+.claim_status {
+    color: #6B6B6B;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.claim_count {
+    color: #6B6B6B;
+    font-size: 56px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.card-column {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 6;
+    -webkit-column-gap: 1.25rem;
+    -moz-column-gap: 1.25rem;
+    column-gap: 1.25rem;
+    orphans: 1;
+    widows: 1;
+}
+
+
+.card:hover {
+    box-shadow: 0 0px 10px 0 rgba(0,0,0,0.5),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.card:active {
+    box-shadow: 0 0px 12px 0 rgba(0,0,0,1),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* popup css */
+
+.dialog-title {
+    height: 44px;
+    background-color: #34ACA7;
+    text-align: center;
+    padding-top: 5px;
+    color: #FFFFFF;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+}
+
+.mat-dialog-container {
+    padding: 0px !important;
+}
+
+.dialog-content {
+    padding: 34px;
+    text-align: center;
+    color: #34ACA7;
+    font-family: Open Sans, Semibold;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.dialog-content:hover {
+    cursor: pointer;
+}
+
+.pat_details_card {
+    background: #EEEEEE;
+    border: none;
+    padding: 1.3rem;
+    padding-bottom: 0rem;
+}
+
+.pat_details_heading {
+    font-size: 20px;
+    color: black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.pat_details_card .table th {
+    color: #6C6C6C;
+    font-size: 16px;
+    font-weight: 200;
+    padding-bottom: 0;
+}
+
+.pat_details_card.table td {
+    color: #000000;
+    font-size: 16px;
+    padding-bottom: 2rem;
+}
+
+.pat_input, .pat_input:focus {
+    background: #EEEEEE;
+    border: none;
+    border-bottom: 1px solid #707070;
+    border-radius: 0;
+    color: #000000;
+    outline: none;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+}

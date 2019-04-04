@@ -1,0 +1,134 @@
+<div class="row dash_heading">
+    <div class="col-md-2">
+        <p class="dash">Dashboard</p>
+    </div>
+    <div class="col-md-10">
+        <p class="dash_time">
+            Date:
+            <small>{{jstoday}}</small>
+        </p>
+    </div>
+</div>
+
+<div class="row claim_snap_row" style="padding-right: 3.5rem;">
+    <div class="col-md-12 col-xs-12 claim_snap_div">
+        <div class="row">
+            <div class="col-md-12 claim_inner_row">
+                <p class="inbox_p">Procedures Snapshot</p>
+                <div class="card-columns">
+                    <div *ngFor="let dummyStat of dummyStatus">
+                        <div *ngIf="dummyStat.status === 'Completed'" class="card approved">
+                            <p class="claim_status">{{dummyStat.status}}</p>
+                            <p class="claim_count">{{dummyStat.count}}</p>
+                        </div>
+                    </div>
+                    <div *ngFor="let dummyStat of dummyStatus">
+                        <div *ngIf="dummyStat.status === 'Pending'" class="card active-status">
+                            <p class="claim_status">{{dummyStat.status}}</p>
+                            <p class="claim_count">{{dummyStat.count}}</p>
+                        </div>
+                    </div>
+                    <div *ngFor="let dummyStat of dummyStatus">
+                        <div *ngIf="dummyStat.status === 'Refused'" class="card rejected">
+                            <p class="claim_status">{{dummyStat.status}}</p>
+                            <p class="claim_count">{{dummyStat.count}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-md-2 col-xs-12 new_claim_div">
+        <button class="btn raise_claim_button"  routerLinkActive="active-side" (click)="loadProcedures()">
+            Check
+        </button>
+    </div> -->
+</div>
+
+<div class="row claim_inbox_row">
+    <div class="col-md-12 claim_inbox_div">
+        <p class="inbox_p">Procedures Inbox ({{dummyStatus[1].count}})</p>
+
+        <!-- For new plans -->
+        <div class="card" *ngFor="let plan of activePlans;let i = index" >
+            <div>
+            <div>
+                <span *ngIf="plan.status=='N'" class="badge waiting_claim">Waiting for Approval</span>
+                <span *ngIf="plan.status=='D'" class="badge rejected_claim">Refused</span>
+                <span *ngIf="plan.status=='C'" class="badge approved_claim">Completed</span>
+                <input *ngIf="plan.status=='N'" type="submit" class="btn" value="Completed" style="color: green;margin-left :5px;" (click)="completed(i)">
+                <input *ngIf="plan.status=='N'" type="submit" class="btn" value="Refused" style="color: red;margin-left :5px " (click)="refused(i)">
+            </div>
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th>Procedure Title</th>
+                        <th>Insurance Coverage</th>
+                        <th>Insurance Percentage</th>
+                        <th>Payer Percentage</th>
+                        <th>Total</th>
+                        <th>From Date</th>
+                        <th>To Date</th>
+
+                        <!-- <th></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{plan.procedureTitle}}</td>
+                        <td>{{plan.insuranceCoverage}}$</td>
+                        <td>{{plan.insurancePercentage}}%</td>
+                        <td>{{plan.payerPercentage}}%</td>
+                        <td>{{plan.feeTotal}}$</td>
+                        <td>{{plan.dateFrom}}</td>
+                        <td>{{plan.dateTo}}</td>
+
+                        <!-- <td> -->
+                            <!-- <input type="submit" value="Details" class="btn get_details">
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+        <!-- For old plans -->
+        <div class="card" *ngFor="let plan of oldPlans">
+            <div *ngIf="plan.status === 'N'">
+                <span class="badge waiting_claim">Waiting for Approval</span>
+            </div>
+            <div *ngIf="plan.status === 'J'">
+                <span class="badge rejected_claim">Rejected</span>
+            </div>
+            <div *ngIf="plan.status === 'F'">
+                <span class="badge approved_claim">Approved</span>
+            </div>
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Employee ID</th>
+                        <th>Physician Name</th>
+                        <th>Description</th>
+                        <th>Total</th>
+                        <th>Comments</th>
+                        <!-- <th></th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{plan.date}}</td>
+                        <td>{{plan.employeeId}}</td>
+                        <td>{{plan.physicianName}}</td>
+                        <td>{{plan.treatmentDescription}}</td>
+                        <td>${{plan.claimTotal}}</td>
+                        <td>{{plan.comments}}</td>
+                        <!-- <td>
+                        <input type="submit" value="Details" class="btn get_details" (click)="getDetails()">
+                    </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

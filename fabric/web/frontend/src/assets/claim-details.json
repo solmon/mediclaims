@@ -1,0 +1,65 @@
+{
+	"planid": "A48575",
+	"insuranceid": "ZA7585212",
+	"planname": "Zigma Family Advantage Plan 1",
+	"patientname": "Mary C Netto",
+	"dob": "21-02-1984",
+	"ssn": "123-42-2324",
+	"copay": "Yes",
+	"groupplan": "TEKsystems",
+	"groupnumber": "23455",
+	"empid": "3423",
+	"address": "25, New avenue, CA 93489",
+	"totalcoverage" : "$5000.00",
+	"claimed" : "$3200.00",
+	"remaining" : "$1800.00",
+	"claim": {
+		"date": "04-07-18",
+		"type": "In-network",
+		"status": "New",
+		"age": "2 Days",
+		"provpatdetails": {
+			"providerid": "W232",
+			"providername": "Medicity",
+			"address": "25, New avenue, CA 93489",
+			"patientid": "A2343",
+			"patientname": "Mary C Netto",
+			"from": "04-04-2018",
+			"to": "04-07-2018"
+		},
+		"diagtreatment": {
+			"physician": "Dr. Henry J. Hilton",
+			"diagnosis": "Mary C Netto was treated for diabetes",
+			"treatmentdetails": [{
+					"id": "1",
+					"desc": "1. Initial screening and diagnosis"
+				},
+				{
+					"id": "2",
+					"desc": "2. Treatment for diabetes and medicines prescribed"
+				}
+			]
+		},
+		"billinsurance": [{
+				"ln": "1",
+				"datefrom": "04/04/2018",
+				"dateto": "04/07/2018",
+				"provider": "W232",
+				"icdcode": "E11.321",
+				"diagnosis": "Mild NDPR with macular edema",
+				"fee": "$120.00",
+				"approve": true
+			},
+			{
+				"ln": "2",
+				"datefrom": "04/04/2018",
+				"dateto": "04/04/2018",
+				"provider": "W232",
+				"icdcode": "E88.89",
+				"diagnosis": "Other metabolic disorders",
+				"fee": "$200.00",
+				"approve": true
+			}
+		]
+	}
+}

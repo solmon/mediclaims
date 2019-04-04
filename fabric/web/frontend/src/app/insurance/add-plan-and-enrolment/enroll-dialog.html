@@ -1,0 +1,43 @@
+<div class="dialog-title">Enrollment</div>
+<div class="dialog-content">
+    <div class="card pat_details_card">
+        <table class="table table-borderless">
+            <thead>
+                <!--<th>ICD</th>-->
+                <th></th>
+                <th>Start Date</th>
+                <th>End Date</th>
+
+            </thead>
+            <tbody>
+                <!--<td><input type="text" class="form-control pat_input" placeholder value required #ICD></td>-->
+                <!--<td><input type="text" class="form-control pat_input" placeholder value required #procedure></td>-->
+                <td>
+                    <!--<select class="form-control pat_input provider_drop_down">
+                            <option value="providers" (click)="providerSelected('provider')">providers</option>
+                            <option *ngFor="let data of providerList" value = {{data}} placeholder value required #provider (click)="providerSelected(provider.value)" >{{data}}</option>
+                        </select>-->
+                    <mat-form-field>
+                        <mat-select placeholder="Benefits">
+                            <mat-option *ngFor="let data of BenefitsList; let i = index" value={{data.benefitTitle}}
+                                placeholder value required #benefit (click)="getBenefitDetails(benefit.value,i)">{{data.benefitTitle}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td><input type="date" class="form-control pat_input" placeholder value required #startDate></td>
+                <td><input type="date" class="form-control pat_input" placeholder value required #endDate></td>
+
+
+            </tbody>
+        </table>
+        <table class="table table-borderless">
+
+            <tbody>
+
+
+
+            </tbody>
+        </table>
+    </div>
+    <input type="submit" style="margin-top:10px;" value="Enroll" class="btn btn-primary get_details" (click)="closeDialog(startDate.value,endDate.value);">
+</div>

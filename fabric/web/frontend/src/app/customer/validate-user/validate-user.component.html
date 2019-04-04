@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="card" style="width: 18rem;margin-top: 20px">
+        <div class="card-body">
+            <div class="content">Register</div>
+            <div class="login-content">Looks like this is the first time you are logging in! Please enter below details to proceed with the registration.</div>
+            <form>
+                <div class="form-group" style="margin-top: 10px">
+                    <input type="ssn" class="form-control" id="ssnid" #ssn aria-describedby="ssnHelp" placeholder="Enter SSN">
+                    <input type="dob" style="margin-top: 5px;" class="form-control" id="dobid" #dob aria-describedby="ssnHelp" placeholder="Enter DOB">
+                    <input type="empID" style="margin-top: 5px;"  class="form-control" id="empid" #emp aria-describedby="ssnHelp" placeholder="Enter Employee ID">
+                    <small id="emailHelp" class="form-text text-muted">Required field.</small>
+                </div>
+                <button type="submit" (click)="register(ssn.value, emp.value, dob.value )" class="btn btn-primary btn-block">Register</button>
+            </form>
+        </div>
+    </div>
+</div>

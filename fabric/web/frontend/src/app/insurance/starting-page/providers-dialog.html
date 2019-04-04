@@ -1,0 +1,36 @@
+<div class="dialog-title">Providers</div>
+<div class="dialog-content">
+    <div class="card pat_details_card">
+            <table class="table table-borderless">
+                <thead>
+                    <!--<th>ICD</th>-->
+                    <th>Provider</th>
+                    
+                </thead>
+                <tbody>
+                    <!--<td><input type="text" class="form-control pat_input" placeholder value required #ICD></td>-->
+                    <!--<td><input type="text" class="form-control pat_input" placeholder value required #procedure></td>-->
+                    <td>
+                        <!--<select class="form-control pat_input provider_drop_down">
+                            <option value="providers" (click)="providerSelected('provider')">providers</option>
+                            <option *ngFor="let data of providerList" value = {{data}} placeholder value required #provider (click)="providerSelected(provider.value)" >{{data}}</option>
+                        </select>-->
+                        <mat-form-field>
+                            <mat-select  placeholder="provider">
+                                <mat-option *ngFor="let data of providerList;let i = index" value = {{data.providerName}} placeholder value required #provider (click)="providerSelected(provider.value,i)" >{{data.providerName}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </td>
+                    
+                </tbody>
+            </table>
+            <table class="table table-borderless">
+                    
+                    <tbody>
+                           
+                       
+                    </tbody>
+                </table>
+    </div>
+    <input type="submit" value="Add Provider" class="btn btn-primary get_details" (click)="addProvider();">
+</div>
